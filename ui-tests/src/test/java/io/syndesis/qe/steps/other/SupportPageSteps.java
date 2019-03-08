@@ -50,6 +50,13 @@ public class SupportPageSteps {
                 .containsIgnoringCase(nightlyVersion == null ? System.getProperty("syndesis.version") : nightlyVersion);
     }
 
+    @When("^check commit id$")
+    public void checkCommitId() {
+        Assertions.assertThat(supportPage.getCommitId())
+                .isNotEmpty()
+                .matches("[a-f0-9]{40}");
+    }
+
 
     private void checkDownloadedFileContent(File file) throws IOException {
 

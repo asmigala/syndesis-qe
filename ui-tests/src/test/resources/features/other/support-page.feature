@@ -80,5 +80,8 @@ Feature: Support page
     #TODO: create integration - use rest steps so it is easier?
     When navigate to the "Support" page in help menu
 
-    And download diagnostics for "my-integration" integration
-
+  @reproducer
+  @gh-4628
+  @support-page-commit-id-present
+  Scenario: Check commit id present on support page
+    Then check commit id

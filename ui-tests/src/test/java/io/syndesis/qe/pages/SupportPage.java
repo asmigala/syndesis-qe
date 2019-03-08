@@ -25,6 +25,7 @@ public class SupportPage extends SyndesisPageObject {
         public static final By CHECKBOX = By.xpath("//*[@type='checkbox']");
 
         public static final By PRODUCT_VERSION = By.id("productVersion");
+        public static final By COMMIT_ID = By.id("commitID");
     }
 
     @Override
@@ -59,5 +60,9 @@ public class SupportPage extends SyndesisPageObject {
 
     public String getVersion() {
         return getRootElement().$(Element.PRODUCT_VERSION).shouldBe(visible).getText();
+    }
+
+    public String getCommitId() {
+        return getRootElement().$(Element.COMMIT_ID).shouldBe(visible).getText();
     }
 }
